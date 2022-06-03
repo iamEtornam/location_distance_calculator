@@ -1,37 +1,35 @@
-## Welcome to GitHub Pages
+# location_distance_calculator
 
-You can use the [editor on GitHub](https://github.com/iamEtornam/location_distance_calculator/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+A Flutter package which provides the distance between two locations
+* [See the example folder](https://github.com/iamEtornam/location_distance_calculator/tree/main/example)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Installation
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+* Add this to your package's pubspec.yaml file:
+```
+dependencies:
+  location_distance_calculator:
+```
+* You can install packages from the command line:
+  with Flutter:
+```
+$ flutter packages get
 ```
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+* Import it now in your Dart code:
+```
+ import 'package:location_distance_calculator/location_distance_calculator.dart';
+```
 
-### Jekyll Themes
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/iamEtornam/location_distance_calculator/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+## Usage
+* Code
+```
+    double distance;
+    // Platform messages may fail, so we use a try/catch PlatformException.
+    try {
+      distance = await FlutterLocationsDistance().distanceBetween(48.8438543, -3.5232399, 48.8589507, 2.2770204);
+    } on PlatformException {
+      distance = -1.0;
+    }
+```
