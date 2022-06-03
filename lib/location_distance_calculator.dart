@@ -6,7 +6,6 @@ import 'package:meta/meta.dart';
 class LocationDistanceCalculator {
   @visibleForTesting
   LocationDistanceCalculator.private(this._channel);
-
   static LocationDistanceCalculator? _instance;
   final MethodChannel _channel;
 
