@@ -28,7 +28,7 @@ $ flutter packages get
     double distance;
     // Platform messages may fail, so we use a try/catch PlatformException.
     try {
-      distance = await FlutterLocationsDistance().distanceBetween(48.8438543, -3.5232399, 48.8589507, 2.2770204);
+      distance = await LocationDistanceCalculator().distanceBetween(48.8438543, -3.5232399, 48.8589507, 2.2770204);
     } on PlatformException {
       distance = -1.0;
     }
