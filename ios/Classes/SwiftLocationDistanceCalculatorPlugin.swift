@@ -1,5 +1,6 @@
 import Flutter
 import UIKit
+import CoreLocation
 
 public class SwiftLocationDistanceCalculatorPlugin: NSObject, FlutterPlugin {
   public static func register(with registrar: FlutterPluginRegistrar) {
