@@ -1,6 +1,6 @@
 name: location_distance_calculator
 description: A Flutter plugin which provides the distance between two locations
-version: 0.0.3
+version: 0.0.5
 homepage: https://iametornam.github.io/location_distance_calculator/
 
 environment:
