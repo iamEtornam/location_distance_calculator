@@ -11,9 +11,9 @@ class LocationDistanceCalculator {
 
   factory LocationDistanceCalculator() {
     if (_instance == null) {
-      const MethodChannel _channel =
-          const MethodChannel('location_distance_calculator');
-      _instance = LocationDistanceCalculator.private(_channel);
+      const MethodChannel channel =
+          MethodChannel('location_distance_calculator');
+      _instance = LocationDistanceCalculator.private(channel);
     }
     return _instance!;
   }
