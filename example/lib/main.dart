@@ -9,8 +9,10 @@ void main() {
 }
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
   @override
-  _MyAppState createState() => _MyAppState();
+  State<MyApp> createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
@@ -27,8 +29,12 @@ class _MyAppState extends State<MyApp> {
     double distance;
     // Platform messages may fail, so we use a try/catch PlatformException.
     try {
-      distance = await LocationDistanceCalculator()
-          .distanceBetween(48.8438543, -3.5232399, 48.8589507, 2.2770204);
+      distance = await LocationDistanceCalculator().distanceBetween(
+        48.8438543,
+        -3.5232399,
+        48.8589507,
+        2.2770204,
+      );
     } on PlatformException {
       distance = -1.0;
     }
@@ -47,12 +53,11 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Flutter locations distance'),
-        ),
+        appBar: AppBar(title: const Text('Flutter locations distance')),
         body: Center(
           child: Text(
-              'Distance between Perros-Guirec and Paris in meters:\n $_distance\n'),
+            'Distance between Perros-Guirec and Paris in meters:\n $_distance\n',
+          ),
         ),
       ),
     );
